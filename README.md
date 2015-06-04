@@ -1,2 +1,2 @@
 
-#Test Ruby first app ruby on rails).
+#Test Ruby first app & ruby on rails 
