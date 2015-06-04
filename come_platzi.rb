@@ -1,5 +1,4 @@
 cmd = ARGV.shift
-
 if cmd
 	alimento = cmd
 
