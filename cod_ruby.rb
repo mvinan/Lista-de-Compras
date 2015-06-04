@@ -11,13 +11,24 @@ def tres_veces
 	yield
 end
 
-	fp = File.open('alimentos.txt','w')
-def reportar(alimento)
-	fp.puts(alimento)
+
+def reportar(archivo, alimento)
+	archivo.puts(alimento)
 end
 
-tres_veces do
-	reportar('Brocoli')
+File.open('alimentos.txt','w') do |fp|
+	tres_veces do
+		reportar(fp,'Brocoli')
+	end
 end
 
-fp.close
+def nuestro_reportar(nombre)
+	fp = File.open("alimentos.txt", "w")
+	yield(fp)
+ensure
+	fp.close
+end
+
+nuestro_reportar('alimentos.txt') do |fp|
+	tres_veces { fp.puts("Coliflor") }
+end
