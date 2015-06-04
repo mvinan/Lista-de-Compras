@@ -5,6 +5,5 @@ if cmd
 		creado = Time.now
 		f.puts "#{alimento}, #{creado}"
 	end
-	
 	puts "#{alimento} agregado"
 end
